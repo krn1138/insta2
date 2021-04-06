@@ -35,3 +35,16 @@ Migrating to CreatePosts (20210406124402)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE DATABASE "insta2_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE "insta2_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-04-07 01:04:04 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/railties-5.2.5/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
