@@ -1,1 +1,15 @@
-index
+<table>
+  <tr>
+    <th>Picture</th>
+    <th>image</th>
+  </tr>
+
+  <% @posts.each do |post| %>
+  <tr>
+  <td><%= post.content %></td>
+  <td><%= post.image %></td>
+  <td><%#= image_tag post.image.url %></td>
+  </tr>
+<% end %>
+</table>
+<%= link_to "new", new_post_path %>
