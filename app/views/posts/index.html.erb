@@ -9,6 +9,7 @@
   <td><%= post.content %></td>
   <td><%= post.image %></td>
   <td><%#= image_tag post.image.url %></td>
+  <td><%= link_to "show", post_path(post.id) %></td>
   </tr>
 <% end %>
 </table>

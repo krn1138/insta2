@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  mount_uploader :image, ImageUploader
 end
 
 # MEMO:　アプリを作る最初はDB設計から　モデルはてーぶるを表現したクラスだからモデルが作成されるとマイグレーションもできる
