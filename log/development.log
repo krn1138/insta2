@@ -1622,3 +1622,1243 @@ ActionView::Template::Error (Nil location provided. Can't build URI.):
     7:   <strong>content:</strong>
   
 app/views/posts/show.html.erb:4:in `_app_views_posts_show_html_erb__223205364801950915_70126592965860'
+Started GET "/" for ::1 at 2021-04-09 23:40:14 +0900
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 6.4ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     8:   <tr>
+     9:   <td><%= post.content %></td>
+    10:   <td><%= post.image %></td>
+    11:   <td><%= image_tag post.image.url %></td>
+    12:   <td><%= link_to "show", post_path(post.id) %></td>
+    13:   </tr>
+    14: <% end %>
+  
+app/views/posts/index.html.erb:11:in `block in _app_views_posts_index_html_erb__4450834772727423286_70250038311200'
+app/views/posts/index.html.erb:7:in `_app_views_posts_index_html_erb__4450834772727423286_70250038311200'
+Started GET "/" for ::1 at 2021-04-09 23:40:28 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 200ms (Views: 198.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/11" for ::1 at 2021-04-09 23:40:30 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <p id="notice"><%= notice %></p>
+    2: <p>
+    3:   <strong>Image:</strong>
+    4:   <%= image_tag @post.image.url %>
+    5: </p>
+    6: <p>
+    7:   <strong>content:</strong>
+  
+app/views/posts/show.html.erb:4:in `_app_views_posts_show_html_erb__933076071034657521_70250011640100'
+Started GET "/posts/11" for ::1 at 2021-04-09 23:40:56 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/11" for ::1 at 2021-04-09 23:41:48 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 15ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/11" for ::1 at 2021-04-10 00:31:44 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    10: 
+    11: <p>内容:</p>
+    12: <p><%= @post.content %></p>
+    13: <p><%= image_tag @post.image.url, size: '200x200' %></p>
+  
+app/views/posts/show.html.erb:13:in `_app_views_posts_show_html_erb__933076071034657521_70250101849100'
+Started GET "/posts/11" for ::1 at 2021-04-10 00:37:55 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 6.3ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    10: 
+    11: <p>内容:</p>
+    12: <p><%= @post.content %></p>
+    13: <p><%= image_tag @post.image.url, size: '200x200' %></p>
+  
+app/views/posts/show.html.erb:13:in `_app_views_posts_show_html_erb__933076071034657521_70250059248600'
+Started GET "/posts/11" for ::1 at 2021-04-10 00:38:05 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 00:38:10 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  Rendered posts/index.html.erb within layouts/application (199.3ms)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_picture_path' for #<#<Class:0x00007fc8bba76008>:0x00007fc8b80eda20>
+Did you mean?  new_post_path):
+    1: h1>Instagram</h1>
+    2: <div class="new_picture_page"><%= link_to '新しく投稿する', new_picture_path %></div>
+    3: 
+    4: <table>
+    5:   <tr>
+  
+app/views/posts/index.html.erb:2:in `_app_views_posts_index_html_erb__4450834772727423286_70250029085020'
+Started GET "/" for ::1 at 2021-04-10 00:38:28 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:11
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    11: <% @posts.each do |post| %>
+    12:   <tr>
+    13:     <td><%#= post.user.name %></td>
+    14:     <td><%= image_tag post.image.url %></td>
+    15:     <td><%= post.content %></td>
+    16:     <td><%= link_to '確認する', post_path(post.id) %></td>
+    17:     <%# if current_user == post.user %>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb__4450834772727423286_70250058719460'
+app/views/posts/index.html.erb:11:in `_app_views_posts_index_html_erb__4450834772727423286_70250058719460'
+Started GET "/" for ::1 at 2021-04-10 00:42:32 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:11
+  Rendered posts/index.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    11: <% @posts.each do |post| %>
+    12:   <tr>
+    13:     <td><%#= post.user.name %></td>
+    14:     <td><%= image_tag post.image.url %></td>
+    15:     <td><%= post.content %></td>
+    16:     <td><%= link_to '確認する', post_path(post.id) %></td>
+    17:     <%# if current_user == post.user %>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb__2902005268044990012_70312571509680'
+app/views/posts/index.html.erb:11:in `_app_views_posts_index_html_erb__2902005268044990012_70312571509680'
+Started GET "/" for ::1 at 2021-04-10 00:42:35 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:11
+  Rendered posts/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    11: <% @posts.each do |post| %>
+    12:   <tr>
+    13:     <td><%#= post.user.name %></td>
+    14:     <td><%= image_tag post.image.url %></td>
+    15:     <td><%= post.content %></td>
+    16:     <td><%= link_to '確認する', post_path(post.id) %></td>
+    17:     <%# if current_user == post.user %>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb__2902005268044990012_70312601958920'
+app/views/posts/index.html.erb:11:in `_app_views_posts_index_html_erb__2902005268044990012_70312601958920'
+Started GET "/" for ::1 at 2021-04-10 00:43:16 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:11
+  Rendered posts/index.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    11: <% @posts.each do |post| %>
+    12:   <tr>
+    13:     <td><%#= post.user.name %></td>
+    14:     <td><%= image_tag post.image.url %></td>
+    15:     <td><%= post.content %></td>
+    16:     <td><%= link_to '確認する', post_path(post.id) %></td>
+    17:     <%# if current_user == post.user %>
+  
+app/views/posts/index.html.erb:14:in `block in _app_views_posts_index_html_erb__2902005268044990012_70312601936880'
+app/views/posts/index.html.erb:11:in `_app_views_posts_index_html_erb__2902005268044990012_70312601936880'
+Started GET "/" for ::1 at 2021-04-10 00:45:59 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 186ms (Views: 183.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/9" for ::1 at 2021-04-10 00:46:01 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 18.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/8" for ::1 at 2021-04-10 00:46:03 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 19ms (Views: 15.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/4" for ::1 at 2021-04-10 00:46:19 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:24
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 00:49:26 +0900
+  
+ActionController::RoutingError (undefined local variable or method `show' for PostsController:Class):
+  
+app/controllers/posts_controller.rb:2:in `<class:PostsController>'
+app/controllers/posts_controller.rb:1:in `<main>'
+Started GET "/" for ::1 at 2021-04-10 00:49:52 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 23ms (Views: 15.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/posts/9" for ::1 at 2021-04-10 00:49:54 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:38
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/8" for ::1 at 2021-04-10 00:49:57 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:38
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 00:49:59 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2021-04-10 00:50:06 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dv3_AP70hciNW5drYIAet47xtmwjWmr9e-BnYqyMuqpdfC4HYABW4wMLq9RFApuJZEKhuah7712joBxalFze8Q", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fe5dc7c8d18 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-43327-o31ikh.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"ss"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `call' for #<Class:0x00007fe5dc7e2268>
+Did you mean?  all):
+  
+app/controllers/posts_controller.rb:13:in `create'
+Started POST "/posts" for ::1 at 2021-04-10 00:50:21 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dv3_AP70hciNW5drYIAet47xtmwjWmr9e-BnYqyMuqpdfC4HYABW4wMLq9RFApuJZEKhuah7712joBxalFze8Q", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fe5e50253c8 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-43327-1ghk2y9.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"ss"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/posts_controller.rb:13:in `create'
+Started POST "/posts" for ::1 at 2021-04-10 00:50:31 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dv3_AP70hciNW5drYIAet47xtmwjWmr9e-BnYqyMuqpdfC4HYABW4wMLq9RFApuJZEKhuah7712joBxalFze8Q", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fe5dc591518 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-43327-1qacqi6.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"ss"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[36mPost Create (1.6ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "ss"], ["created_at", "2021-04-09 15:50:31.762956"], ["updated_at", "2021-04-09 15:50:31.762956"]]
+  ↳ app/controllers/posts_controller.rb:14
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:14
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 00:50:31 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/12" for ::1 at 2021-04-10 00:50:33 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:38
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 00:50:35 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:00:03 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 01:00:04 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/karen/workspace/insta2/app/views/posts/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append=( render 'form' post: @post );
+...                           ^~~~):
+  
+app/views/posts/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts/new" for ::1 at 2021-04-10 01:00:54 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/karen/workspace/insta2/app/views/posts/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append=( render 'form' post: @post );
+...                           ^~~~):
+  
+app/views/posts/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts/new" for ::1 at 2021-04-10 01:00:55 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/karen/workspace/insta2/app/views/posts/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append=( render 'form' post: @post );
+...                           ^~~~):
+  
+app/views/posts/new.html.erb:2: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/posts/new" for ::1 at 2021-04-10 01:01:09 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.5ms)
+  Rendered posts/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 01:10:50 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 01:11:19 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.9ms)
+  Rendered posts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:11:20 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2021-04-10 01:11:22 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/edit.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: post, local: true) do |form| %>
+    2:   <% if post.errors.any? %>
+    3:   <div id="error_explanation">
+    4:     <h2><%= post.errors.count %>件のエラーがあります。</h2>
+    5:     <ul>
+  
+app/views/posts/_form.html.erb:2:in `block in _app_views_posts__form_html_erb___39324032913304382_70312610238260'
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___39324032913304382_70312610238260'
+app/views/posts/edit.html.erb:2:in `_app_views_posts_edit_html_erb__1892201437995948234_70312610202420'
+Started GET "/posts/4/edit" for ::1 at 2021-04-10 01:12:07 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: post, local: true) do |form| %>
+    2:   <% if post.errors.any? %>
+    3:   <div id="error_explanation">
+    4:   <h2><%= pluralize(karen.errors.count, "error") %> prohibited this post from being saved:</h2>
+    5:     <h2><%= post.errors.count %>件のエラーがあります。</h2>
+  
+app/views/posts/_form.html.erb:2:in `block in _app_views_posts__form_html_erb___39324032913304382_70312670854300'
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___39324032913304382_70312670854300'
+app/views/posts/edit.html.erb:2:in `_app_views_posts_edit_html_erb__1892201437995948234_70312670818560'
+Started GET "/posts/4/edit" for ::1 at 2021-04-10 01:44:37 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/edit.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: post, local: true) do |form| %>
+    2:   <% if post.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    5: 
+  
+app/views/posts/_form.html.erb:2:in `block in _app_views_posts__form_html_erb___39324032913304382_70312602961160'
+app/views/posts/_form.html.erb:1:in `_app_views_posts__form_html_erb___39324032913304382_70312602961160'
+app/views/posts/edit.html.erb:2:in `_app_views_posts_edit_html_erb__1892201437995948234_70312602895880'
+Started GET "/posts/4/edit" for ::1 at 2021-04-10 01:46:25 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2021-04-10 01:49:13 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:49:14 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/6/edit" for ::1 at 2021-04-10 01:49:46 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:50:19 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 28ms (Views: 15.2ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/posts/4/edit" for ::1 at 2021-04-10 01:50:20 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:39
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 20.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2021-04-10 01:50:56 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:39
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.7ms)
+  Rendered posts/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2021-04-10 01:50:57 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"-xNiu7bk9zax7JleAd5kG-booSyhdarcZz2AB9VfF2KyrBN8_bmglAVsUhNOIl4qAmVIbGVA14RGcvtH70OqZQ", "post"=>{"content"=>"s"}, "commit"=>"Update Post", "id"=>"5"}
+No template found for PostsController#update, rendering head :no_content
+Completed 204 No Content in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2021-04-10 01:54:01 +0900
+  
+SyntaxError (/Users/karen/workspace/insta2/app/controllers/posts_controller.rb:46: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+Started GET "/posts/5/edit" for ::1 at 2021-04-10 01:54:11 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:41
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.8ms)
+  Rendered posts/edit.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 27ms (Views: 14.6ms | ActiveRecord: 3.2ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2021-04-10 01:54:15 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wBxVshR85wbNBXEON8qn21Yr8Y8uYNugdBeYOqpcAp8HV47n4RHDqByE2tXTnh5W0V9t9tB8ZzVCmMTrkVsJEQ", "post"=>{"content"=>"suu"}, "commit"=>"Update Post", "id"=>"5"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:28:in `update'
+Started PATCH "/posts/5" for ::1 at 2021-04-10 01:55:34 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wBxVshR85wbNBXEON8qn21Yr8Y8uYNugdBeYOqpcAp8HV47n4RHDqByE2tXTnh5W0V9t9tB8ZzVCmMTrkVsJEQ", "post"=>{"content"=>"suu"}, "commit"=>"Update Post", "id"=>"5"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/posts_controller.rb:28:in `update'
+Started PATCH "/posts/5" for ::1 at 2021-04-10 01:56:10 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wBxVshR85wbNBXEON8qn21Yr8Y8uYNugdBeYOqpcAp8HV47n4RHDqByE2tXTnh5W0V9t9tB8ZzVCmMTrkVsJEQ", "post"=>{"content"=>"suu"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:28
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "content" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["content", "suu"], ["updated_at", "2021-04-09 16:56:10.945870"], ["id", 5]]
+  ↳ app/controllers/posts_controller.rb:28
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:28
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:56:10 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:58:16 +0900
+  
+SyntaxError (/Users/karen/workspace/insta2/app/controllers/posts_controller.rb:51: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:51: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2021-04-10 01:58:25 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 41ms (Views: 31.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:58:26 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:58:28 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:58:39 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 28ms (Views: 18.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:58:39 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:59:01 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 25ms (Views: 16.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:59:02 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 01:59:03 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:01:41 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/" for ::1 at 2021-04-10 02:01:44 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/" for ::1 at 2021-04-10 02:03:21 +0900
+  
+ActionController::RoutingError (No route matches [DELETE] "/"):
+  
+actionpack (5.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.5) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.5) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.5) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-04-10 02:10:08 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 37ms (Views: 22.6ms | ActiveRecord: 10.1ms)
+
+
+Started DELETE "/posts/4" for ::1 at 2021-04-10 02:10:11 +0900
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UiizW-laglmLwJN6OUoPxyS7l0MYDWHYYdfj3pNIXH2VY2gOHDem91pBOKHdHrZKo88LOuYR3U1XWL8PqE9X8w", "id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: post):
+  
+app/controllers/posts_controller.rb:46:in `post_params'
+app/controllers/posts_controller.rb:36:in `destroy'
+Started DELETE "/posts/4" for ::1 at 2021-04-10 02:12:14 +0900
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UiizW-laglmLwJN6OUoPxyS7l0MYDWHYYdfj3pNIXH2VY2gOHDem91pBOKHdHrZKo88LOuYR3U1XWL8PqE9X8w", "id"=>"4"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[36mPost Destroy (1.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:12:14 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/posts/6" for ::1 at 2021-04-10 02:12:16 +0900
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M4WD9ZA3xaM63JnqcfBIOyMCSgoKDo7RothjvCKGQJL0zligZVrhDetdMjGVpPG2pHbWc_QSMkSUVz9tGYFLHA", "id"=>"6"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[36mPost Destroy (0.5ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:12:16 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:16:54 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:7
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:17:39 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/7" for ::1 at 2021-04-10 02:31:58 +0900
+  
+SyntaxError (/Users/karen/workspace/insta2/config/routes.rb:8: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:8: syntax error, unexpected end-of-input, expecting end
+Started GET "/posts/7" for ::1 at 2021-04-10 02:32:15 +0900
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 225ms (Views: 198.1ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/posts/7/edit" for ::1 at 2021-04-10 02:32:20 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (14.9ms)
+  Rendered posts/edit.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/posts/confirm" for ::1 at 2021-04-10 02:32:21 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ageg5bDa2zROyt4xFngcy_vzs2IjdNjqIQxVpIgoN8Af7T2eoamt3sPGLqPyJU2SdKfTR8CSFl0FQk__64ca2g", "post"=>{"content"=>"s"}, "commit"=>"Update Post", "id"=>"confirm"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:46:in `set_params'
+Started GET "/posts/7/edit" for ::1 at 2021-04-10 02:33:13 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.6ms)
+  Rendered posts/edit.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 14.9ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/posts/confirm" for ::1 at 2021-04-10 02:33:14 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mENqjwPUdEg8XyUa34fZslVv0qvzR8wah1xQYxq2BaZfCLHa9rlQ5u3ejsE702A_0htO0g1bcI-x0wyyIbEOKA", "post"=>{"content"=>"s"}, "commit"=>"Update Post", "id"=>"confirm"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+Completed 404 Not Found in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:46:in `set_params'
+Started PATCH "/posts/confirm" for ::1 at 2021-04-10 02:34:14 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mENqjwPUdEg8XyUa34fZslVv0qvzR8wah1xQYxq2BaZfCLHa9rlQ5u3ejsE702A_0htO0g1bcI-x0wyyIbEOKA", "post"=>{"content"=>"s"}, "commit"=>"Update Post", "id"=>"confirm"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:46:in `set_params'
+Started PATCH "/posts/confirm" for ::1 at 2021-04-10 02:36:10 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mENqjwPUdEg8XyUa34fZslVv0qvzR8wah1xQYxq2BaZfCLHa9rlQ5u3ejsE702A_0htO0g1bcI-x0wyyIbEOKA", "post"=>{"content"=>"s"}, "commit"=>"Update Post", "id"=>"confirm"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:46:in `set_params'
+Started PATCH "/posts/confirm" for ::1 at 2021-04-10 02:38:30 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mENqjwPUdEg8XyUa34fZslVv0qvzR8wah1xQYxq2BaZfCLHa9rlQ5u3ejsE702A_0htO0g1bcI-x0wyyIbEOKA", "post"=>{"content"=>"s"}, "commit"=>"Update Post", "id"=>"confirm"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+Completed 404 Not Found in 10ms (ActiveRecord: 3.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:46:in `set_params'
+Started PATCH "/posts/confirm" for ::1 at 2021-04-10 02:38:35 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mENqjwPUdEg8XyUa34fZslVv0qvzR8wah1xQYxq2BaZfCLHa9rlQ5u3ejsE702A_0htO0g1bcI-x0wyyIbEOKA", "post"=>{"content"=>"suu"}, "commit"=>"Update Post", "id"=>"confirm"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:46
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:46:in `set_params'
+Started GET "/" for ::1 at 2021-04-10 02:48:29 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 34ms (Views: 23.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/posts/7/edit" for ::1 at 2021-04-10 02:48:31 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.6ms)
+  Rendered posts/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/7" for ::1 at 2021-04-10 02:48:35 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t_mx1VcPGuxXx58Cx3ZJFzvmj8evaH-8_D5eN5Ywf3I5H0fuBUM72tAlPG4mNnk7nxCF6c-dJaJ00WVNw8RmVA", "post"=>{"content"=>"suu"}, "commit"=>"Update Post", "id"=>"7"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[36mPost Update (0.6ms)[0m  [1m[33mUPDATE "posts" SET "content" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["content", "suu"], ["updated_at", "2021-04-09 17:48:35.688560"], ["id", 7]]
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:48:35 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/11/edit" for ::1 at 2021-04-10 02:48:38 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/posts/11" for ::1 at 2021-04-10 02:48:44 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y2jtkcCgOECBajcULESqwPPCWIwfejCsYxnMKClUnaAwrdRE-CFM7VOc8zfPBUBbVOvgEXHEwj9Gv2lhmimjEQ", "post"=>{"content"=>"リヴァイu"}, "commit"=>"Update Post", "id"=>"11"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "content" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["content", "リヴァイu"], ["updated_at", "2021-04-09 17:48:44.811319"], ["id", 11]]
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:48:44 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 02:48:46 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/confirm" for ::1 at 2021-04-10 02:48:55 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOnKwspC7mrw8o1Wy-QjsRZzyC_ccs0v-gnctYc6-SSh-RO5FRGSy4V4sW5Ky6EJMtmiXd2cptx3gs4jNjomEA", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fd7a34a2248 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-46416-ihne1i.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"リヴァイ888"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (199.2ms)
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `confirm_new_or_edit' for #<#<Class:0x00007fd7a36f8920>:0x00007fd7a34f1640>
+Did you mean?  confirm_posts_url):
+    1: <h3>以下の内容で、送信する。</h3>
+    2: <%= form_with(model: @post, url: confirm_new_or_edit, method: confirm_form_method, local: true) do |form| %>
+    3:     <%= form.hidden_field :image %>
+    4:   <%= form.hidden_field :content %>
+    5:   <p>画像:<%= @post.image %></p>
+  
+app/views/posts/confirm.html.erb:2:in `_app_views_posts_confirm_html_erb___4180205350527113365_70282067285540'
+Started POST "/posts/confirm" for ::1 at 2021-04-10 02:50:35 +0900
+  
+SyntaxError (/Users/karen/workspace/insta2/app/helpers/posts_helper.rb:8: syntax error, unexpected end-of-input, expecting end):
+  
+app/helpers/posts_helper.rb:8: syntax error, unexpected end-of-input, expecting end
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/posts_controller.rb:1:in `<main>'
+Started POST "/posts/confirm" for ::1 at 2021-04-10 02:50:45 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOnKwspC7mrw8o1Wy-QjsRZzyC_ccs0v-gnctYc6-SSh-RO5FRGSy4V4sW5Ky6EJMtmiXd2cptx3gs4jNjomEA", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fd7a8661c50 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-46416-19gh0m9.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"リヴァイ888"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (220.0ms)
+Completed 500 Internal Server Error in 233ms (ActiveRecord: 2.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `confirm_new_or_edit' for #<#<Class:0x00007fd7a86e88e0>:0x00007fd7a86f2e80>
+Did you mean?  confirm_posts_url):
+    1: <h3>以下の内容で、送信する。</h3>
+    2: <%= form_with(model: @post, url: confirm_new_or_edit, method: confirm_form_method, local: true) do |form| %>
+    3:     <%= form.hidden_field :image %>
+    4:   <%= form.hidden_field :content %>
+    5:   <p>画像:<%= @post.image %></p>
+  
+app/views/posts/confirm.html.erb:2:in `_app_views_posts_confirm_html_erb___4180205350527113365_70282110257260'
+Started POST "/posts/confirm" for ::1 at 2021-04-10 02:52:45 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOnKwspC7mrw8o1Wy-QjsRZzyC_ccs0v-gnctYc6-SSh-RO5FRGSy4V4sW5Ky6EJMtmiXd2cptx3gs4jNjomEA", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fd79f5a9820 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-46416-1yhuck9.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"リヴァイ888"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 31ms (Views: 17.2ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/posts" for ::1 at 2021-04-10 02:52:49 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FbxXQAkfGpy03GjiKf9GzFpMUwobOJYwvOiXEB1p-CbS94wV_HI-MmVdwznNq_9B3TjPc-UkKqWKZ8vBJm7zqA", "post"=>{"image"=>"", "content"=>"リヴァイ888"}, "commit"=>"登録する"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "リヴァイ888"], ["created_at", "2021-04-09 17:52:49.227946"], ["updated_at", "2021-04-09 17:52:49.227946"]]
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 20ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/posts" for ::1 at 2021-04-10 02:52:49 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/13/edit" for ::1 at 2021-04-10 02:52:51 +0900
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.2ms)
+  Rendered posts/edit.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/posts/13" for ::1 at 2021-04-10 02:52:54 +0900
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6HzJY7ge6ThYCfaabrYJ-bLQ3EUY1eqTigxccZdojKd0Dn7nExYvIqj_je5d9BuF-UX02gjqx7bbswKRocm1sw", "post"=>{"content"=>"リヴァイ88811"}, "commit"=>"Update Post", "id"=>"13"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "content" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["content", "リヴァイ88811"], ["updated_at", "2021-04-09 17:52:54.189973"], ["id", 13]]
+  ↳ app/controllers/posts_controller.rb:36
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:36
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-04-10 02:52:54 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 02:52:57 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (1.6ms)
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/confirm" for ::1 at 2021-04-10 02:53:00 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ArJBzjDXsh9T8nytjXM9q5P70-x_FHXu9DGKti9ePNr3opi174TOviZ4QJUMXL8Tt1G5nn76Hh15upggnl7j7g", "post"=>{"content"=>"aaaa"}, "commit"=>"Create Post"}
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2021-04-10 02:53:04 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fHYIUYEnqb-Lpnn44DjCs050I5wpblNmcra072Hrz_q7PdMEdEqNEVon0iMEbHs-yQC_5ddy7_NEOeg-WuzEdA", "post"=>{"image"=>"", "content"=>"aaaa"}, "commit"=>"登録する"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "aaaa"], ["created_at", "2021-04-09 17:53:04.897863"], ["updated_at", "2021-04-09 17:53:04.897863"]]
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/posts" for ::1 at 2021-04-10 02:53:04 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+

@@ -1,3 +1,4 @@
+<h1>Instagram</h1>
 <table>
   <tr>
     <th>Picture</th>
@@ -8,9 +9,11 @@
   <tr>
   <td><%= post.content %></td>
   <td><%= post.image %></td>
-  <td><%#= image_tag post.image.url %></td>
+  <td><%#= post.image.url %></td>
   <td><%= link_to "show", post_path(post.id) %></td>
+  <td><%= link_to "edit", edit_post_path(post.id) %></td>
+  <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
-<%= link_to "new", new_post_path %>
+<%= link_to "新規投稿", new_post_path %>
