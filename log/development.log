@@ -2862,3 +2862,382 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2021-04-10 21:39:30 +0900
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/Users/karen/workspace/insta2/app/controllers/posts_controller.rb:56: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/posts_controller.rb:56: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2021-04-10 21:39:54 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 8.5ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     9:   <tr>
+    10:   <td><%= post.content %></td>
+    11:   <td><%#= post.image %></td>
+    12:   <td><%= image_tag post.image.url %></td>
+    13:   <td><%= link_to "show", post_path(post.id) %></td>
+    14:   <td><%= link_to "edit", edit_post_path(post.id) %></td>
+    15:   <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  
+app/views/posts/index.html.erb:12:in `block in _app_views_posts_index_html_erb___4448002223721885198_70124434835260'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb___4448002223721885198_70124434835260'
+Started GET "/" for ::1 at 2021-04-10 21:40:52 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 224ms (Views: 221.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/8" for ::1 at 2021-04-10 21:40:55 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:49
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 27ms (Views: 19.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 21:40:56 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (14.0ms)
+  Rendered posts/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 34ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/confirm" for ::1 at 2021-04-10 21:41:04 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4Wqh0-ZduwSjYmtjNYSYykLSA0LtwgubjG2JY5Fts3YUenioOQ7HpdboV1u0qxpyZnhpMOwsYGgB5pv1IG1sQg", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007f8e3a2c6800 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-75564-1i8i4x8.jpg>, @original_filename="Dn3FT7sU8AAODL0.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"Dn3FT7sU8AAODL0.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"suu"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2021-04-10 21:41:05 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K0Yb-gaJ10KrX7OyQ42kaEjhrSe5AjzHDfNx-BYqepTsDcCv8-Tz7HreGGmn2R3lz5UxXkcegFI7fC0pLS1xGg", "post"=>{"image"=>"", "content"=>"suu"}, "commit"=>"登録する"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[36mPost Create (1.9ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "suu"], ["created_at", "2021-04-10 12:41:05.481477"], ["updated_at", "2021-04-10 12:41:05.481477"]]
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 10ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/posts" for ::1 at 2021-04-10 21:41:05 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts/8" for ::1 at 2021-04-10 21:41:07 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:49
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 23ms (Views: 19.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/posts" for ::1 at 2021-04-10 21:46:40 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     9:   <tr>
+    10:   <td><%= post.content %></td>
+    11:   <td><%#= post.image %></td>
+    12:   <td><%= image_tag post.image.url %></td>
+    13:   <td><%= link_to "show", post_path(post.id) %></td>
+    14:   <td><%= link_to "edit", edit_post_path(post.id) %></td>
+    15:   <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  
+app/views/posts/index.html.erb:12:in `block in _app_views_posts_index_html_erb___4448002223721885198_70124391578200'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb___4448002223721885198_70124391578200'
+Started GET "/posts" for ::1 at 2021-04-10 21:48:34 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     9:   <tr>
+    10:   <td><%= post.content %></td>
+    11:   <td><%#= post.image %></td>
+    12:   <td><%= image_tag post.image.url %></td>
+    13:   <td><%= link_to "show", post_path(post.id) %></td>
+    14:   <td><%= link_to "edit", edit_post_path(post.id) %></td>
+    15:   <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  
+app/views/posts/index.html.erb:12:in `block in _app_views_posts_index_html_erb___4448002223721885198_70124391081040'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb___4448002223721885198_70124391081040'
+Started GET "/posts" for ::1 at 2021-04-10 21:48:35 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     9:   <tr>
+    10:   <td><%= post.content %></td>
+    11:   <td><%#= post.image %></td>
+    12:   <td><%= image_tag post.image.url %></td>
+    13:   <td><%= link_to "show", post_path(post.id) %></td>
+    14:   <td><%= link_to "edit", edit_post_path(post.id) %></td>
+    15:   <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  
+app/views/posts/index.html.erb:12:in `block in _app_views_posts_index_html_erb___4448002223721885198_70124436232860'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb___4448002223721885198_70124436232860'
+Started GET "/posts/confirm" for ::1 at 2021-04-10 21:48:36 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"confirm"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:49
+Completed 404 Not Found in 7ms (ActiveRecord: 3.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=confirm):
+  
+app/controllers/posts_controller.rb:49:in `set_params'
+Started POST "/posts/confirm" for ::1 at 2021-04-10 21:48:39 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lH5GyAFYtUSoBjfLJe9f4nH1mJ53OdUh0OVAHleFvlZTNZ2d9DWR6nmHnBDBu-Zv9oEE54klabTmahzPbIK12A", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007f8e3cd6df68 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-75564-1i9xlqd.jpg>, @original_filename="Dn3FT7sU8AAODL0.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"Dn3FT7sU8AAODL0.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"suu"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 27ms (Views: 23.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 21:48:42 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (3.3ms)
+  Rendered posts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 32ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/confirm" for ::1 at 2021-04-10 21:48:48 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dDC8UuAWgo8u3tUchifbvwExd13Ka5mBqbXM2qx-G2Kze2cHFXumIf9ffsdic2IyhkXrJDR3JRSfOpALl3kQ7A", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007f8e3a22db50 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-75564-qqclhq.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"ss"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 21:50:45 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (2.0ms)
+  Rendered posts/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/confirm" for ::1 at 2021-04-10 21:50:51 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Br-zaHmh7JaKL65JXwRz3kV1L8YZGInMbyoW2krFCWrB9Gg9jMzIOFuuBZK7UMpTwgGzv-cENVlZpUoLccIC5A", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007f8e42115670 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-75564-4fks7a.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"s"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    2: <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+    3:   <%= form.hidden_field :image_cache %>
+    4:   <%= form.hidden_field :content %>
+    5:   <p>タイトル:<%= image_tag @post.image.url %></p>
+    6:   <p>本文:<%= @post.content %></p>
+    7:   <%= form.submit  "登録する" %>
+    8:   <%= form.submit "戻る", name: 'back' %>
+  
+app/views/posts/confirm.html.erb:5:in `block in _app_views_posts_confirm_html_erb___2836309565943676726_70124493486540'
+app/views/posts/confirm.html.erb:2:in `_app_views_posts_confirm_html_erb___2836309565943676726_70124493486540'
+Started GET "/" for ::1 at 2021-04-10 23:44:20 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (15.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 6.2ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     9:   <tr>
+    10:   <td><%= post.content %></td>
+    11:   <td><%#= post.image %></td>
+    12:   <td><%= image_tag post.image.url %></td>
+    13:   <td><%= link_to "show", post_path(post.id) %></td>
+    14:   <td><%= link_to "edit", edit_post_path(post.id) %></td>
+    15:   <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  
+app/views/posts/index.html.erb:12:in `block in _app_views_posts_index_html_erb__396601603659848804_70121351695840'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__396601603659848804_70121351695840'
+Started GET "/" for ::1 at 2021-04-10 23:45:04 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+     9:   <tr>
+    10:   <td><%= post.content %></td>
+    11:   <td><%#= post.image %></td>
+    12:   <td><%= image_tag post.image.url %></td>
+    13:   <td><%= link_to "show", post_path(post.id) %></td>
+    14:   <td><%= link_to "edit", edit_post_path(post.id) %></td>
+    15:   <td><%= link_to "destroy", post_path(post.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
+  
+app/views/posts/index.html.erb:12:in `block in _app_views_posts_index_html_erb__396601603659848804_70121304842460'
+app/views/posts/index.html.erb:8:in `_app_views_posts_index_html_erb__396601603659848804_70121304842460'
+Started GET "/" for ::1 at 2021-04-10 23:45:21 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 203ms (Views: 200.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-04-10 23:45:24 +0900
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (15.2ms)
+  Rendered posts/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts/confirm" for ::1 at 2021-04-10 23:45:30 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ESSt4C7u4Jis_XYH35zonGR7C7YoeyF8DeGobXtXFQtVEvMX-jHIxc5yeCeUfEaVTuGXNlPh3Z9vJQ3BO2DYA", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007f8cc90aacf0 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-78670-1o4agm8.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"s"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/karen/workspace/insta2/app/views/posts/confirm.html.erb:13: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/posts/confirm.html.erb:13: syntax error, unexpected ensure, expecting end-of-input
+Started POST "/posts/confirm" for ::1 at 2021-04-10 23:45:54 +0900
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ESSt4C7u4Jis_XYH35zonGR7C7YoeyF8DeGobXtXFQtVEvMX-jHIxc5yeCeUfEaVTuGXNlPh3Z9vJQ3BO2DYA", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007f8cc72ccb98 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210410-78670-2oegaq.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"s"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (9.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    3:   <%= form.hidden_field :image_cache %>
+    4:   <%= form.hidden_field :content %>
+    5:   <%= image_tag(@post.image.url) if @post.image && @post.image.url %>
+    6:     <p>画像:<%= image_tag @post.image.url %></p>
+    7:   <p>本文:<%= @post.content %></p>
+    8:   <%= form.submit  "登録する" %>
+    9:   <%= form.submit "戻る", name: 'back' %>
+  
+app/views/posts/confirm.html.erb:6:in `block in _app_views_posts_confirm_html_erb__1498341808056443312_70121377280000'
+app/views/posts/confirm.html.erb:2:in `_app_views_posts_confirm_html_erb__1498341808056443312_70121377280000'
+Started POST "/posts/confirm" for ::1 at 2021-04-11 00:25:27 +0900
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/karen/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.5/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2ESSt4C7u4Jis_XYH35zonGR7C7YoeyF8DeGobXtXFQtVEvMX-jHIxc5yeCeUfEaVTuGXNlPh3Z9vJQ3BO2DYA", "post"=>{"iamge"=>#<ActionDispatch::Http::UploadedFile:0x00007fbc0f1bbea8 @tempfile=#<Tempfile:/var/folders/4v/dvpnrvhn6hs01d_44z9vytfm0000gn/T/RackMultipart20210411-79671-cjnsvp.jpg>, @original_filename="default.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[iamge]\"; filename=\"default.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"s"}, "commit"=>"Create Post"}
+Unpermitted parameter: :iamge
+  Rendering posts/confirm.html.erb within layouts/application
+  Rendered posts/confirm.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 228ms (Views: 193.4ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/posts" for ::1 at 2021-04-11 00:25:29 +0900
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K-N-8uNphzFnAYyTHc4sOLmGelj3LhZjc7E1-kqeubDsqKWnFgSjn7aAJ0j5mpW1PvLmIQkyqvZFPmkrcZmyPg", "post"=>{"image_cache"=>"", "content"=>"s"}, "commit"=>"登録する"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("content", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["content", "s"], ["created_at", "2021-04-10 15:25:29.595033"], ["updated_at", "2021-04-10 15:25:29.595033"]]
+  ↳ app/controllers/posts_controller.rb:16
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:16
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 9ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/posts" for ::1 at 2021-04-11 00:25:29 +0900
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:8
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 21ms (Views: 18.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5644297821057725340)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20210410152720)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (38.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20210410152720_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210410152720"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (4.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5644297821057725340)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
