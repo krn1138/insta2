@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_params, only: [:show, :edit, :update, :destroy]
+  # before_action :not_sign_in
   def index
     @posts = Post.all
   end
@@ -52,4 +53,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:image, :content, :image_cache)
   end
+
 end
